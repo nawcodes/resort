@@ -1,0 +1,97 @@
+Module App 
+
+|-------------------------------------Interface Costumers-------------------------------------------------|
+
+1. Module Booking
+    - Create Booking
+2. Module  Register Costumers Account /  
+    - Registered Account
+        note : Account Costumers Can Be Registered When Booking Created
+3. Module Login
+    - Login
+
+4. Module Reservation
+    - Create Reservation Rooms
+    - Delete Reservation Orders
+
+5. Module Chekout 
+    - Create Checkout / Payment
+    - Confirm Payment
+
+6. Module ORders 
+    -Detail
+    /----------------Future Plan------------/
+    -Search Invoice
+
+7. Module Key Rooms (qrcodes)
+    -Detail
+
+
+/------Module On Workbench--------/
+#
+/------Future Plan Module-------------/
+#
+
+|-------------------------------------End Interface Costumers-------------------------------------------------|
+
+|----------------------------------------------Interface Admin-------------------------------------------------|
+
+1. Module Costumers
+    -Create Costumers
+    -Edit & Detail Costumers , Verify Costumers
+    -Delete Costumers
+    \-------- Future Plan ------------\
+    #Search Costumers
+    #Booking Create
+
+2. Module Booking Orders
+    - Detail 
+    - Confirm Orders Costumers
+    - Create Keys For Costumers
+    /------On Workbench-------/
+    -Edit Booking Costumers
+    /--------Future Plan-------/
+    -Search Orders
+
+3. Module Rooms
+    - Create Rooms
+    - Edit Rooms
+    - Delete Rooms
+    /--------Future Plan---------/
+    -Search Rooms
+    -Filter Rooms
+
+
+4. Module Keys (QRCODES)
+    - Create Keys For Guest
+    - Edit Keys Rooms
+    - Delete Key Rooms
+    /-------Future Plan---------/
+    #Create Keys For Costumers If Costumers Registered
+    -Filter 
+    -Search
+
+5. Module Keys
+    - Create Master Keys 🏃
+    - List Master Keys
+    - Edit Master Keys
+    - Delete Master Keys
+    /---------Future Plan ----------/
+    -Search
+
+
+
+/----------------Module On Workbench---------------/
+
+
+/----------------Future Plan Module---------------/    
+
+#Module Multi Users
+    - Role Access
+    /-------- Future Plan ----------/
+    - Menu Access
+
+|-------------------------------------End Interface Costumers-------------------------------------------------|
+
+
+

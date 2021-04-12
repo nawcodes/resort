@@ -1,0 +1,144 @@
+https://www.warungbelajar.com/membuat-fitur-multiple-upload-di-codeigniter.html
+
+//dates 
+https://stackoverflow.com/questions/676824/how-to-calculate-the-difference-between-two-dates-using-php
+
+https://stackoverflow.com/questions/2040560/finding-the-number-of-days-between-two-dates
+
+
+
+<?php 
+
+$start= strtotime('2021-01-26');
+
+$end= strtotime('2021-01-30');
+
+$days = ceil(abs($end-$start) / 86400);
+
+
+var_dump($days);
+?>
+
+
+if(isset($_POST['btn-verif'])) {
+            $imageName = url_title($data['costumers']->account_id , '-' , true) .  date('YmdHis') .  '-' . 'account'; 
+
+            $config = [
+                'upload_path'        => './assets/images/account/',
+                'allowed_types'      => 'gif|jpg|png|JPG|jpeg|JPEG',
+                'max_size'           => 2048,
+                'max_width'          => 0,
+                'max_height'         => 0,
+                'overwrite'          => true,
+                'file_ext_tolower'   => true
+            ];
+
+            $this->load->library('upload', $config);
+
+
+            if(! empty($_FILES['account_image']['name']) && $_FILES['account_image']['name'] !== '' ) {
+                
+                $this->upload->do_upload('account_image');
+                $image1 = $this->upload->data();
+                $data['input']->account_image = $image1['file_name']; 
+                
+                // $imageName = url_title($data['costumers']->account_id , '-' , true) .  date('YmdHis') .  '-' . 'account';
+                // $uploadId = $this->booking->uploadImage('account_image', $imageName);
+
+                // if($uploadId) {
+                //     $data['input']->account_image = $uploadId['file_name'];
+                // } else {
+                //     $this->session->set_flashdata('error', $this->upload->display_errors('', ''));
+                    
+                // }
+            }
+
+
+            
+
+
+            if(! empty($_FILES['account_image_user']['name']) && $_FILES['account_image_user']['name'] !== '' ) {
+                $this->upload->do_upload('account_image_user');
+                $image2 = $this->upload->data();
+                $data['input']->account_image_user = $image2['file_name']; 
+
+                
+                //$imageName = url_title($data['costumers']->account_id , '-' , true) .  date('YmdHis') .  '-' . 'user';
+
+                
+                // $uploadUser = $this->booking->uploadImage('account_image_user', $imageName);
+
+                // if($uploadUser) {
+                //     $data['input']->account_image_user = $uploadUser['file_name'];
+                // } else {
+                //     $this->session->set_flashdata('error', $this->upload->display_errors('', ''));
+                // }
+            }
+
+        }
+
+
+
+
+         if( ! $this->myreservation->validate()) {
+                
+                redirect(base_url('myreservation'));               
+                
+            }else {
+
+                $this->myreservation->table = 'type_rooms';
+
+                $rooms = $this->myreservation->where('id', $data['input']->id_rooms)->first();
+
+                $roomsCalc = calculateDiffDate($data['input']->date_from, $data['input']->date_to) * $rooms->price_pernight;
+
+                
+                
+                if($data['input']->date_from && $data['input']->date_to) {
+
+                }
+
+                $this->myreservation->table = 'extra';
+
+                $extra_bed = $this->myreservation->where('id' , $data['input']->extra)->first();
+
+                if( ! $extra_bed ) {
+                    $extra_bed = (object) ['price' => 0];
+                }
+
+                $subtotal = $roomsCalc + $extra_bed->price;
+
+
+
+                $moreBooking = [
+                    'id_costumers'  => $data['input']->id_costumers ,
+                    'id_type_rooms' => $data['input']->id_rooms,
+                    'date_from'     => $data['input']->date_from,
+                    'date_to'       => $data['input']->date_to,
+                    'id_extra'      => $data['input']->extra,
+                    'subtotal'      => $subtotal
+                ];
+
+
+                $this->myreservation->table = 'booking';
+
+
+                if($this->myreservation->insert($moreBooking)) {
+                    $this->session->set_flashdata('success', 'Sip');
+                
+                }else {
+                    $this->session->set_flashdata('error', 'error');
+                
+                }
+
+
+                
+                redirect(base_url('booking/uploadImage'));
+                
+
+
+
+
+
+
+            }

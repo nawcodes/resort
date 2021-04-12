@@ -1,0 +1,29 @@
+/* .room {
+    
+    position: relative;
+    
+}
+
+
+
+
+a.room-sec:hover {
+    
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    z-index: 999;
+} */
+
+.room-sec {
+    transition: all 0.3s ease 0s;
+}
+
+a.room-sec:hover {
+    text-decoration: none;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.4) !important ;
+}
+

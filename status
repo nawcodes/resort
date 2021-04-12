@@ -1,0 +1,82 @@
+*   [33mf58c280[m[33m ([m[1;36mHEAD -> [m[1;32mpanel[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m Merge pull request #10 from rifal-keksukabumi/panel
+[31m|[m[32m\[m  
+[31m|[m * [33m0509b25[m[33m ([m[1;31morigin/panel[m[33m)[m fixed [view] Mykeys
+[31m|[m * [33ma20a515[m change block function Confirm && Create Access Key Costumer On Admin/Orders And Be Create Function
+[31m|[m * [33m3867aa5[m 	modified:   application/controllers/Myreservation.php                 -mod Myreservation , Morebooking must be 1                 -add validation if morebooking than 1 "return false"                 -hidden button [pesan kamar] if more booking == 1
+[31m|[m * [33m980684b[m fixed Booking Costumers , Add Validation Uniq_AccountID, uniq_phone, uniq_email and Date_validation
+[31m|[m * [33mc37538f[m Function Erase On Costumers hash Been Added
+[31m|[m * [33mee1ee91[m new file moduleApp.txt for detail modul app
+[31m|[m * [33m190aa84[m -change function delete to erase on Costumers.php -update gitignore -delete boostrap.zip
+[31m|[m * [33mc410d17[m add callback function unique_email unique_phone unique_accountId on Costumers.php
+[31m|[m * [33mbf473c6[m     add CREATE DATA     add function upload_image on EDIT_DATA
+[31m|[m * [33mbb018d8[m add function deleteImage On Helper
+[31m|[m * [33ma9de4a7[m add DELETE_DATA on Costumers
+[31m|[m * [33m7ca6df1[m 	modified:   application/controllers/admin/Costumers.php                 -fixed EDIT_DATA 	modified:   application/controllers/admin/Guest.php                 -add get_data by id after insert 	modified:   application/models/Costumers_model.php                 -add setRules 	modified:   application/models/Guest_model.php                 -mod data_name qrcode on guest 	modified:   application/views/pages/admin/costumers-form.php                 -mod account_id to id                 -set value $input 	modified:   application/views/pages/admin/costumers-submission.php                 -mod account_id to id
+[31m|[m * [33m6c459a4[m 	modified:   application/controllers/admin/Costumers.php                 -fixed method edit 	new file:   application/controllers/admin/Verify.php                 -new Controller For Verify Costumers
+[31m|[m[31m/[m  
+*   [33m3346b23[m Merge pull request #9 from rifal-keksukabumi/panel
+[33m|[m[34m\[m  
+[33m|[m * [33m14fd596[m 	modified:   application/controllers/admin/Guest.php                 -fixed method CREATE_DATA                 -fixed method EDIT_DATA                 -fixed method DELETE_DATA                 -modified method DELETE_DATA To Function erase()                 -add condition DATE_TO AND DATE_FROM                 -add condition if rooms not clean (redirect)
+[33m|[m * [33me025197[m 	modified:   application/controllers/admin/Type_rooms.php                 -give comentar to unique_name function need javascript and table type_rooms_slug 	modified:   application/models/Type_rooms_model.php                 -unset comentar rules callback_unique_name on name 	modified:   application/views/pages/admin/type-class-form.php                 -fixe isset id_type_rooms
+[33m|[m * [33mf331bc5[m 	modified:   application/controllers/admin/Rooms.php                 -fixed method create rooms                 -fixed method edit rooms                 -fixed unique_value number_rooms
+[33m|[m * [33m673e5d9[m fix [view]
+* [34m|[m [33m1fedfe0[m Merge pull request #8 from rifal-keksukabumi/panel
+[35m|[m[34m\[m[34m|[m 
+[35m|[m * [33mc0ae4a0[m 	modified:   application/controllers/Mykeys.php                 -add method details key
+[35m|[m * [33m634b7b7[m 	new file:   application/controllers/Mykeys.php                 -add controllers Mykeys for costumers key page
+[35m|[m[35m/[m  
+*   [33m20371bc[m Merge pull request #7 from rifal-keksukabumi/panel
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33m4e08116[m 	modified:   application/controllers/admin/Orders.php                 -Add Function EDIT_DATA COSTUMERS_KEY 	modified:   application/models/Orders_model.php                 -Add Function Delete_Data Costumers_keys 	modified:   application/views/pages/admin/orders-detail.php                 -fix [view] 	modified:   application/views/pages/admin/orders-form.php                 -fix [view] 	modified:   application/views/pages/admin/orders.php                - fix[views]
+[1;31m|[m * [33m34c81d3[m     modified:   application/controllers/admin/Orders.php                 -new method edit for edit key     modified:   application/views/pages/admin/orders-detail.php                 -modified [view]     new file:   application/views/pages/admin/orders-form.php                 -new form for edit key
+[1;31m|[m * [33m4839962[m modified:   application/controllers/admin/Orders.php             -fix create method ond controllers Orders modified:   application/views/pages/admin/orders-detail.php             -fix view
+[1;31m|[m * [33mcdadb36[m 	modified:   application/views/pages/checkout/index.php                 - add condition if status unconfirmed [view] 	modified:   application/views/pages/my-bokorder/detail.php                 - [view]
+[1;31m|[m * [33m77143ef[m news table = 'costumers_key'
+[1;31m|[m[1;31m/[m  
+*   [33m85a901d[m Merge pull request #6 from rifal-keksukabumi/panel
+[1;33m|[m[1;34m\[m  
+[1;33m|[m * [33m4dcfbf7[m add condition date_to <= date_from
+[1;33m|[m * [33mac4e26e[m add Delete Booking Function For Costumers & modify view.reservation if booking == null
+[1;33m|[m * [33m2be5235[m                 Booking.php                 -modified booking page
+[1;33m|[m * [33m0829546[m new file:   application/controllers/Myreservation.php             -add costumers reservation booking
+[1;33m|[m * [33md4c7062[m     modified:   application/controllers/Auth.php                 -add condition if is_approved unverivied & verified and then redirect
+[1;33m|[m[1;33m/[m  
+*   [33m84bdffb[m Merge pull request #5 from rifal-keksukabumi/booking
+[1;35m|[m[1;36m\[m  
+[1;35m|[m * [33me6518f9[m[33m ([m[1;31morigin/booking[m[33m, [m[1;32mbooking[m[33m)[m     modified [ctrl.Booking]             - Change [method.uploadImage] to [method.verification]             - Change property upload image be singgle property function not be function uploadImage again.             - functionaly verification has been fixed     modified [models.Booking_model]             - add functionn deleteImage     modified [view.booking/form.php]             - fix form_validation     modified [view.booking/verif.php]             - change to be page verification page.     modified form_upload to lang ID
+[1;35m|[m * [33ma08dccb[m fix [controllers.Booking] && [view.booking/index.php]
+* [1;36m|[m [33m45b7237[m Merge pull request #4 from rifal-keksukabumi/guest
+[31m|[m[1;36m\[m[1;36m|[m 
+[31m|[m * [33mee85e7a[m[33m ([m[1;31morigin/guest[m[33m, [m[1;32mguest[m[33m)[m     add function DELETE_DATA [controllers.Guest]     add button delete on [view.guest-form.php]
+[31m|[m * [33ma80cb5e[m     modified function Create ADD_DATA [controllers.Guest]     add function EDIT_DATA [controllers.Guest]     add SetDefaultValues is_active [Guest_model]     modified SetDefaultValues name to title [Guest_model]     add selection is_active [view.guest-form.php]     add button back [view.guest.php]
+[31m|[m * [33m96f9a96[m little modified guest.php [view]
+[31m|[m * [33m280947e[m     add create function ADD_DATA [controllers.Guest] but need fixed     add create makeQrCodes [model.guest]     little modified guest-form.php [view]     little modified guest.php [view]
+[31m|[m * [33m9aefbfb[m     add schema function ADD_DATA [controllers.Guest]     add setDefaultValues [model.Guest_model]     add guest-form.php [view]
+[31m|[m * [33mc9736e4[m     add controllers/Guest.php     add model/Guest_model.php     update db.sql
+[31m|[m[31m/[m  
+*   [33mf906437[m Merge pull request #3 from rifal-keksukabumi/roomClass
+[33m|[m[34m\[m  
+[33m|[m * [33mf93024c[m[33m ([m[1;31morigin/roomClass[m[33m, [m[1;32mroomClass[m[33m)[m add function unique_name on Ctrl.Type_rooms.php
+* [34m|[m [33mb5ada3c[m Merge pull request #2 from rifal-keksukabumi/roomClass
+[35m|[m[34m\[m[34m|[m 
+[35m|[m * [33m945f67e[m add function UPDATE_DATA && DELETE_DATA on Type_rooms.php
+[35m|[m[35m/[m  
+*   [33mad17ed4[m Merge pull request #1 from rifal-keksukabumi/classRooms
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33mcd7f313[m Create Function ADD_DATA on ctrl.Type_room.php
+[1;31m|[m[1;31m/[m  
+* [33m8a7ad52[m add language ID and modified form_validation language to ID
+* [33m2607ec3[m Create Function Delete On Rooms.php
+* [33m629497e[m // Create function UPDATE_DATA on Rooms.php
+* [33md958d61[m     // create function ADD_DATA on page rooms //     modified add method create & method unique_numbers     modified add default values     add rooms-form.php     modified link on page rooms
+* [33m6d7a395[m just a little modified content
+* [33m5119840[m add ctrl.user.php and view user.php just content
+* [33me059938[m add view costumers-submission on ctrl Costumers , costumers on registered need verification
+* [33m578a217[m add view rooms-class.php
+* [33m77dd74b[m Add Mthd.classRooms On Ctrl Rooms For Content All Type Rooms
+* [33m463e377[m Add All Rooms Number Content On Ctrl.Rooms
+* [33m75c4049[m modified costumers-form content
+* [33m3f713a7[m add costumers.form -content need fix
+* [33mf6a947a[m FIX confirm orders with table rooms
+* [33mcacc42e[m Add Database Sql
+* [33mae8fda2[m Add Project indonesiansezs-hotel
